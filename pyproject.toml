@@ -8,6 +8,10 @@ packages = [{include = "src"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 Flask = "^3.0.1"
+opencv-python = "^4.11.0.86"
+pytesseract = "^0.3.13"
+opencv-python-headless = "^4.11.0.86"
+google-cloud-vision = "^3.10.1"
 
 [tool.poetry.scripts]
 app = 'src.main:main'
