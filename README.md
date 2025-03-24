@@ -1,28 +1,30 @@
-# Flask Web App Starter
+# Test OCR
 
-A Flask starter template based on [these docs](https://flask.palletsprojects.com/en/3.0.x/quickstart/#a-minimal-application).
+Configure path of "tesseract" in "src/scanner/service.py"
 
-## Getting Started
+```bash
 
-Previews should run automatically when starting a workspace.
+pytesseract.pytesseract.tesseract_cmd = "/opt/homebrew/bin/tesseract"
+```
 
-## Install dependencies
+Make sure you have python
 
-poetry add opencv-python opencv-python-headless pytesseract 
+```bash
+python -V
+pip list
+```
 
-which tesseract
+Install dependecies
 
-tesseract --version
+```bash
+pip install poetry
+poetry install
+```
 
-tesseract --list-langs
+Start app with port 9000
 
-poetry show --tree
-<!-- poetry build -->
-<!-- poetry publish -->
+```bash
+python -m flask --app src/main run -p 9000 --debug
+```
 
-
-## Google 
-
-poetry add google-cloud-vision
-
-<!-- export GOOGLE_APPLICATION_CREDENTIALS="path_to_your_service_account_key.json" -->
+http://localhost:9000
